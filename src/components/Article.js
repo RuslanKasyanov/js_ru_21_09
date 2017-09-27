@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-
+import CommentList from './CommentList'
 class Article extends Component {
     static defaultProps = {
-
     }
 
     static propTypes = {
@@ -19,6 +18,7 @@ class Article extends Component {
     render() {
         const {article, isOpen, onButtonClick} = this.props
         const body = isOpen && <section>{article.text}</section>
+        const commentList = isOpen && <CommentList comments={article.comments}/>
         return (
             <div>
                 <h2>
@@ -29,10 +29,11 @@ class Article extends Component {
                 </h2>
                 {body}
                 <h3>creation date: {(new Date(article.date)).toDateString()}</h3>
+                {commentList}
             </div>
+
         )
     }
 }
-
 
 export default Article
