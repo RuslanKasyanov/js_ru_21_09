@@ -1,6 +1,6 @@
 import React, {Component as ReactComponent} from 'react'
 
-export default (OriginalComponent) => class DecoratedComponent extends ReactComponent {
+export default (ComponentWithOpenArticleId) => class ComponentWithToggleId extends ReactComponent {
     state = {
         openArticleId: null
     };
@@ -15,10 +15,10 @@ export default (OriginalComponent) => class DecoratedComponent extends ReactComp
         return func;
     };
     render() {
-        return <OriginalComponent
+        return <ComponentWithOpenArticleId
             {...this.props}
             openArticleId = {this.state.openArticleId}
-            toggleArticle = {this.toggleArticle}
+            toggleId = {this.toggleArticle}
         />
     };
     memoized = new Map();
