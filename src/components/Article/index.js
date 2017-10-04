@@ -2,7 +2,7 @@ import React, {Component, PureComponent} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import PropTypes from 'prop-types'
 import CommentList from '../CommentList'
-import ComponentForm from '../commentForm/index'
+import ComponentForm from '../CommentForm/index'
 import {findDOMNode} from 'react-dom'
 import './style.css'
 
