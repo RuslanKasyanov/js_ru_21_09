@@ -2,6 +2,7 @@ import React, {Component, PureComponent} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import PropTypes from 'prop-types'
 import CommentList from '../CommentList'
+import ComponentForm from '../commentForm/index'
 import {findDOMNode} from 'react-dom'
 import './style.css'
 
@@ -52,12 +53,14 @@ class Article extends PureComponent {
     }
 
     getBody() {
-        const {isOpen, article} = this.props
+        const {isOpen, article} = this.props;
 
-        if (!isOpen) return null
+
+        if (!isOpen) return null;
 
         return (
             <div>
+                <ComponentForm/>
                 <section>{article.text}</section>
                 <CommentList comments = {article.comments} ref = {this.setCommentsRef} key = {this.state.clicked}/>
             </div>
