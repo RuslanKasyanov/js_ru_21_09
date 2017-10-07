@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import CommentList from '../CommentList'
 import {findDOMNode} from 'react-dom'
 import {connect} from 'react-redux'
-import {deleteArticle} from '../../AC'
+import {deleteArticle} from '../../AC/index'
 import './style.css'
 
 class Article extends PureComponent {
@@ -27,7 +27,7 @@ class Article extends PureComponent {
     }
 
     render() {
-        const {article, isOpen, onButtonClick} = this.props
+        const {article, isOpen, onButtonClick} = this.props;
 
         if (this.state.clicked > 3) throw new Error('clicked more then 3 times')
 
@@ -55,10 +55,8 @@ class Article extends PureComponent {
     }
 
     getBody() {
-        const {isOpen, article} = this.props
-
-        if (!isOpen) return null
-
+        const {isOpen, article} = this.props;
+        if (!isOpen) return null;
         return (
             <div>
                 <section>{article.text}</section>

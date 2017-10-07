@@ -30,10 +30,10 @@
   "dependencies": {
     "css-loader": "^0.28.7",
     "prop-types": "^15.5.10",
-    "react": "16",
+    "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
-    "react-day-picker": "^6.1.1",
-    "react-dom": "16",
+    "react-day-picker": "^6.2.1",
+    "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-select": "1.0.0-rc.10",
     "redux": "^3.7.2",

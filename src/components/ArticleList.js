@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import Article from './Article'
+import Article from './Article/Article'
 import Accordion from './Accordion'
 import {connect} from 'react-redux'
 
@@ -14,7 +14,8 @@ class ArticleList extends Accordion {
         if (this.state.error) return <h2>Error: {this.state.error.message}</h2>
         if (!articles.length) return <h3>No Articles</h3>
 
-        const articleElements = articles.map((article) => <li key={article.id}>
+        const articleElements = articles.filter(article => !article.hideUnselected)
+            .filter(article => !article.hide).map((article) => <li key={article.id}>
             <Article article={article}
                      isOpen={article.id === this.state.openItemId}
                      onButtonClick={this.toggleOpenItemMemoized(article.id)}

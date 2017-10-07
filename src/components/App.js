@@ -10,14 +10,14 @@ class App extends Component {
     }
 
     render() {
-        const {username} = this.state
+        const {username} = this.state;
 
         return (
             <div>
                 <h1>App name</h1>
                 <Counter />
                 User: <input type = 'text' value = {username} onChange = {this.handleUserChange}/>
-                <Filters articles = {[]}/>
+                <Filters />
                 <ArticleList />
             </div>
         )
